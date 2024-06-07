@@ -1,1 +1,1 @@
-# skills-assessment
+Coding exercises
