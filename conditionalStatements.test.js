@@ -75,12 +75,12 @@ describe('task1', () => {
         expect(myFunctions.ifXIsEqualToYAndZWithTypeCheck(1, 1, 2)).toBeFalsy();
         expect(myFunctions.ifXIsEqualToYAndZWithTypeCheck(1, 2, 1)).toBeFalsy();
     });
-    test('ifXisTrueDevideYBy7AndAlwaysReturnY', () => {
-        expect(myFunctions.ifXisTrueDevideYBy7AndAlwaysReturnY(true, 1)).toBe(7);
-        expect(myFunctions.ifXisTrueDevideYBy7AndAlwaysReturnY(true, -1)).toBe(-7);
-        expect(myFunctions.ifXisTrueDevideYBy7AndAlwaysReturnY(true, 55)).toBe(385);
-        expect(myFunctions.ifXisTrueDevideYBy7AndAlwaysReturnY(1, 5)).toBe(5);
-        expect(myFunctions.ifXisTrueDevideYBy7AndAlwaysReturnY(false, 5)).toBe(5);
-        expect(myFunctions.ifXisTrueDevideYBy7AndAlwaysReturnY("true", 5)).toBe(5);
+    test('ifXisTrueMultiplyYBy7AndAlwaysReturnY', () => {
+        expect(myFunctions.ifXisTrueMultiplyYBy7AndAlwaysReturnY(true, 1)).toBe(7);
+        expect(myFunctions.ifXisTrueMultiplyYBy7AndAlwaysReturnY(true, -1)).toBe(-7);
+        expect(myFunctions.ifXisTrueMultiplyYBy7AndAlwaysReturnY(true, 55)).toBe(385);
+        expect(myFunctions.ifXisTrueMultiplyYBy7AndAlwaysReturnY(1, 5)).toBe(5);
+        expect(myFunctions.ifXisTrueMultiplyYBy7AndAlwaysReturnY(false, 5)).toBe(5);
+        expect(myFunctions.ifXisTrueMultiplyYBy7AndAlwaysReturnY("true", 5)).toBe(5);
     });
 });
