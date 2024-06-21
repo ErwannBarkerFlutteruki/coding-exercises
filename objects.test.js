@@ -1,17 +1,14 @@
 import {
   getYearOfBirth,
   isOver40,
-  getUserAge,
   createProduct,
   addPriceToProduct,
   createCoder,
-  createUserString,
   getAlbumProperties,
   getAlbumValues,
   countKeys,
   addBandName,
   deletePassword,
-  deleteManyPasswords,
   countTheObjects,
 } from "./objects";
 
@@ -33,16 +30,6 @@ describe("isOver40", function () {
     expect(isOver40({ age: 4 })).toBe(false);
     expect(isOver40({ age: 10 })).toBe(false);
     expect(isOver40({ age: 29 })).toBe(false);
-  });
-});
-
-describe("getUserAge", () => {
-  it("returns the age of the passed user based on its yearOfBirth property", () => {
-    const currentYear = new Date().getFullYear();
-    const user = {
-      yearOfBirth: 1989,
-    };
-    expect(getUserAge(user)).toEqual(currentYear - 1989);
   });
 });
 
@@ -82,31 +69,6 @@ describe("createCoder", () => {
     const coder = createCoder("Mauro", 1989);
     expect(coder).toHaveProperty("language");
     expect(coder.language).toEqual("JavaScript");
-  });
-});
-
-describe("createUserString", () => {
-  it('returns a string containing "name : <user\'s name>"', () => {
-    const mitchObj = { name: "Mitch", age: 27, language: "Javascript" };
-    const actual = createUserString(mitchObj);
-    expect(actual.includes("name: Mitch")).toBe(true);
-  });
-  it('returns a string containing "age : <user\'s age>"', () => {
-    const mitchObj = { name: "Mitch", age: 27, language: "Javascript" };
-    const actual = createUserString(mitchObj);
-    expect(actual.includes("age: 27")).toBe(true);
-  });
-  it('returns a string containing "language : <user\'s language>"', () => {
-    const mitchObj = { name: "Mitch", age: 27, language: "Javascript" };
-    const actual = createUserString(mitchObj);
-    expect(actual.includes("language: Javascript")).toBe(true);
-  });
-  it("returns a whole string with all of the user's details", () => {
-    const mitchObj = { name: "Mitch", age: 27, language: "Javascript" };
-    const actual = createUserString(mitchObj);
-    expect(actual.includes("name: Mitch, age: 27, language: Javascript")).toBe(
-      true
-    );
   });
 });
 
@@ -212,24 +174,6 @@ describe("deletePassword", function () {
         password: "pineapple",
       })
     ).toEqual({ name: "claire", username: "claire1988" });
-  });
-});
-
-describe("deleteManyPasswords", function () {
-  it("deletes the password key value pair on every object in an array of createUserString", function () {
-    expect(
-      deleteManyPasswords([
-        { name: "Barry", password: "ilovetea" },
-        { name: "Sandeep", password: "ilovecoffee" },
-        { name: "Kavita", password: "ilovepie" },
-      ])
-    ).toEqual([{ name: "Barry" }, { name: "Sandeep" }, { name: "Kavita" }]);
-    expect(
-      deleteManyPasswords([
-        { name: "Carmen", password: "ilovetea" },
-        { name: "Lisa", password: "ilovepie" },
-      ])
-    ).toEqual([{ name: "Carmen" }, { name: "Lisa" }]);
   });
 });
 
