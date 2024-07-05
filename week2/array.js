@@ -1,7 +1,7 @@
 // Fill in the body of the functions following the instructions.
 // Important! Don't change the name of the functions.
 
-// Update the function to add 'element' to the start of 'arr'
+// Update the function to add 'element' to the end of 'arr'
 export const pushElementOnToArray = (arr, x) => {};
 
 // Update the function to remove the last element from 'arr'
