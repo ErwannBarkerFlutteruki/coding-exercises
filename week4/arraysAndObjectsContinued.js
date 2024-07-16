@@ -8,7 +8,13 @@ export function getMiddleNames(names) {
     If someone does not have a middle name the array should contain the value null at this index.
     E.g. ['Ben Jones', 'Marsha Naomi Jenkins', 'Anna'] => [null, 'Naomi', null]
     */
-
+	 return names.map(name => {
+		 let indNames = name.split(" ")
+		 if (indNames.length === 3) {
+			return indNames[1];
+		 } 
+		 return null;
+	 })
 }
 
 export function getPugNames(dogs) {
@@ -21,4 +27,6 @@ export function getPugNames(dogs) {
     ]
     will return ['Max', 'Poppy']
     */
+	 let pugs = dogs.filter(dog => dog.breed === "Pug");
+	 return pugs.map(pug => pug.name);
 }
