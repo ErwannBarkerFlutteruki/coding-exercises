@@ -1,18 +1,40 @@
 // typehint the following variables
 
-const isRight = false;
-const firstName = 'Bob';
-const age = 24;
-const dateTime = new Date();
-const numberList = [1,2,4,5,6];
-const nameList = ['bob', 'smith', 'a name', 'something else'];
-const listOfNumberList = [[1,3,4], [4], [2,4,5]];
-const listOfObjects = [{}, {}, {}]
+const isRight: boolean = false;
+const firstName: string = 'Bob';
+const age: number = 24;
+const dateTime: Date = new Date();
+const numberList: number[] = [1,2,4,5,6];
+const nameList: string[] = ['bob', 'smith', 'a name', 'something else'];
+const listOfNumberList: number[][] = [[1,3,4], [4], [2,4,5]];
+const listOfObjects: {}[] = [{}, {}, {}]
 
 // create a type that satisfy the following object
 // anything that's an array should have it's own type defined
 // add the new type to the const below
-const user = {
+
+type User = {
+	username: string;
+	name: string;
+	age: number;
+	addresses: Addresses
+	isEmployed: boolean
+}
+
+type Addresses = Address[]
+
+type Address = {
+	firstline: string;
+	postcode: string;
+	town: string;
+	region?: string;
+	population: number;
+	type: string;
+	isPrimary: boolean;
+}
+
+
+const user: User = {
     username: "bobsmith22",
     name:  "boby",
     age: 66,
@@ -39,5 +61,14 @@ const user = {
 }
 
 //create an interface for the following function and add it to the function so it's typed for all inputs, and the return
-const myFuns = (str, user) => user;
 
+// interface IFormatter {
+// 	(data: string, toUpper: boolean): string;
+// };
+interface MyFuns {
+	(str: string, user: User): User;
+}
+
+const myFuns: MyFuns = (str, user) => user;
+
+myFuns("foo", user);
