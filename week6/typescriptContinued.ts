@@ -1,4 +1,5 @@
 // typehint the following variables
+
 const isRight = false;
 const firstName = 'Bob';
 const age = 24;

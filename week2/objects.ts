@@ -29,7 +29,7 @@ export function addPriceToProduct(product, price) {
     */
 }
 
-export function createCoder(name, yearOfBirth) {
+export function createCoder(name, yearOfBirth = null) {
   // return an object with:
   // a name property set to the value of the name parameter
   // an age property set to whatever the age of the coder would be on the year 2017
