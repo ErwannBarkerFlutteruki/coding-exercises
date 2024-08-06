@@ -1,12 +1,11 @@
 import React from 'react';
-import { UserProvider } from './UserContext';
 import UserProfile from './UserProfile';
 
+
+//Add context to userprofile
 const App: React.FC = () => {
     return (
-        <UserProvider>
-            <UserProfile />
-        </UserProvider>
+        <UserProfile />
     );
 };
 

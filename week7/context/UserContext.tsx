@@ -17,7 +17,6 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 
 // Define the provider component's props
 interface UserProviderProps {
-    children: ReactNode;
 }
 
 
@@ -28,25 +27,11 @@ interface UserProviderProps {
 // return the new context, with the values of user, login and logout
 // make sure that children is still being used in the return.
 export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
-    const [user, setUser] = useState<User | null>(null);
-
-    const login = (user: User) => setUser(user);
-    const logout = () => setUser(null);
-
-    return (
-        <UserContext.Provider value={{ user, login, logout }}>
-            {children}
-        </UserContext.Provider>
-    );
 };
 
 // Create a hook that returns a created context,
 //throws an error 'useUser must be used within a UserProvider' if no context is defined.
 // Custom hook for using the UserContext
 export const useUser = (): UserContextType => {
-    const context = useContext(UserContext);
-    if (context === undefined) {
-        throw new Error('useUser must be used within a UserProvider');
-    }
-    return context;
+
 };

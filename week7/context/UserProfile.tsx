@@ -1,8 +1,7 @@
 import React from 'react';
-import { useUser } from './UserContext';
 
 const UserProfile: React.FC = () => {
-    const { user, login, logout } = useUser();
+    //get the user, login and logout from the context and store it as a variable
 
     const handleLogin = () => {
         login({ name: 'John Doe', email: 'john.doe@example.com' });
