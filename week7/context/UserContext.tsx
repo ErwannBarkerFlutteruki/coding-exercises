@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-// Define the shape of the user context state
 interface User {
     name: string;
     email: string;
@@ -13,7 +12,6 @@ interface UserContextType {
 }
 
 // Create the context with default value
-const UserContext = createContext<UserContextType | undefined>(undefined);
 
 // Define the provider component's props
 interface UserProviderProps {
