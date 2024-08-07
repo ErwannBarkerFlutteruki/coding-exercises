@@ -3,21 +3,21 @@ import { render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Greeting, RenderChildren, RenderList } from './react';
 
-// test('displays the correct greeting message', () => {
-//     render(<Greeting name="John" />);
+test('displays the correct greeting message', () => {
+    render(<Greeting name="John" />);
 
-//     const greetingElement = screen.getByText(/Hello, John!/i);
-//     expect(greetingElement).toBeInTheDocument();
-// });
+    const greetingElement = screen.getByText(/Hello, John!/i);
+    expect(greetingElement).toBeInTheDocument();
+});
 
 
-// test('displays the correct children', () => {
-//     const children = <>someHtlm</>;
-//     render(<RenderChildren children={children} />);
+test('displays the correct children', () => {
+    const children = <>someHtlm</>;
+    render(<RenderChildren children={children} />);
 
-//     const renderChildrenElement = screen.getByText(/someHtlm/i);
-//     expect(renderChildrenElement).toBeInTheDocument();
-// });
+    const renderChildrenElement = screen.getByText(/someHtlm/i);
+    expect(renderChildrenElement).toBeInTheDocument();
+});
 
 test('renders a list of items', () => {
     const  items = [
